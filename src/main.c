@@ -19,6 +19,7 @@
 
 static void SystemClock_Config(void);
 static void CPU_CACHE_Enable(void);
+static void MX_GPIO_Init(void);
 
 int main(void) {
 
@@ -39,6 +40,8 @@ int main(void) {
 
 	SystemClock_Config();
 
+    MX_GPIO_Init();
+
 	lv_init();
 
 	tft_init();
@@ -47,9 +50,55 @@ int main(void) {
 	lv_demo_widgets();
 
 	while(1) {
+        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET);
 	    lv_task_handler();
+        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET);
 		HAL_Delay(1);
 	}
+}
+
+static void MX_GPIO_Init(void)
+{
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+    __HAL_RCC_GPIOE_CLK_ENABLE();
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+    __HAL_RCC_GPIOG_CLK_ENABLE();
+    __HAL_RCC_GPIOD_CLK_ENABLE();
+    __HAL_RCC_GPIOC_CLK_ENABLE();
+    __HAL_RCC_GPIOI_CLK_ENABLE();
+    __HAL_RCC_GPIOF_CLK_ENABLE();
+    __HAL_RCC_GPIOJ_CLK_ENABLE();
+    __HAL_RCC_GPIOH_CLK_ENABLE();
+
+    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(GPIOF, GPIO_PIN_6, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(GPIOJ, GPIO_PIN_1, GPIO_PIN_RESET);
+
+    GPIO_InitStruct.Pin     = GPIO_PIN_7;
+    GPIO_InitStruct.Mode    = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull    = GPIO_PULLDOWN;
+    GPIO_InitStruct.Speed   = GPIO_SPEED_FREQ_VERY_HIGH;
+    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin     = GPIO_PIN_6;
+    GPIO_InitStruct.Mode    = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull    = GPIO_PULLDOWN;
+    GPIO_InitStruct.Speed   = GPIO_SPEED_FREQ_VERY_HIGH;
+    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin     = GPIO_PIN_6;
+    GPIO_InitStruct.Mode    = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull    = GPIO_PULLDOWN;
+    GPIO_InitStruct.Speed   = GPIO_SPEED_FREQ_VERY_HIGH;
+    HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin     = GPIO_PIN_1;
+    GPIO_InitStruct.Mode    = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull    = GPIO_PULLDOWN;
+    GPIO_InitStruct.Speed   = GPIO_SPEED_FREQ_VERY_HIGH;
+    HAL_GPIO_Init(GPIOJ, &GPIO_InitStruct);
 }
 
 static void SystemClock_Config(void)

@@ -157,7 +157,7 @@ void tft_init(void)
 
 static void tft_flush_cb(lv_disp_t * disp, const lv_area_t * area, uint8_t * pxmap)
 {
-
+    HAL_GPIO_WritePin(GPIOF, GPIO_PIN_6, GPIO_PIN_SET);
 	SCB_CleanInvalidateDCache();
 
 	/*Truncate the area to the screen*/
@@ -181,6 +181,7 @@ static void tft_flush_cb(lv_disp_t * disp, const lv_area_t * area, uint8_t * pxm
 	{
 		while(1);	/*Halt on error*/
 	}
+    HAL_GPIO_WritePin(GPIOF, GPIO_PIN_6, GPIO_PIN_RESET);
 }
 
 static void LCD_Config(void)

@@ -53,6 +53,7 @@ int main(void) {
         HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET);
 	    lv_task_handler();
         HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET);
+        lv_obj_invalidate(lv_scr_act());
 		HAL_Delay(1);
 	}
 }

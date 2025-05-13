@@ -54,8 +54,18 @@ int main(void) {
 	    lv_task_handler();
         HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET);
         lv_obj_invalidate(lv_scr_act());
-		HAL_Delay(1);
+		HAL_Delay(100);
 	}
+}
+
+void GPIO_1_SET(int state)
+{
+    if (state) {
+        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
+    }
+    else {
+        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET);
+    }
 }
 
 static void MX_GPIO_Init(void)

@@ -89,6 +89,7 @@ target_link_libraries(${PROJECT_NAME}
     -T${LINKER_SCRIPT}
     -nodefaultlibs
     -Wl,--gc-sections
+    -Wl,--print-memory-usage
     m
     lvgl
     lvgl_demos

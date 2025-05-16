@@ -11,8 +11,8 @@
 
 #include "stm32f7xx.h"
 #include "stm32f769i_discovery.h"
-#include "hal_stm_lvgl/tft/tft.h"
-#include "hal_stm_lvgl/touchpad/touchpad.h"
+#include "lvgl_hal/tft/tft.h"
+#include "lvgl_hal/touchpad/touchpad.h"
 #include "lvgl/lvgl.h"
 #include "lvgl/examples/lv_examples.h"
 #include "lvgl/demos/lv_demos.h"

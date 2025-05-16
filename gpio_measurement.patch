@@ -1,29 +1,28 @@
 diff --git a/lvgl/src/core/lv_refr.c b/lvgl/src/core/lv_refr.c
-index 5bedd063b..a1a6a8831 100644
+index 989769831..814a27981 100644
 --- a/lvgl/src/core/lv_refr.c
 +++ b/lvgl/src/core/lv_refr.c
-@@ -46,6 +46,8 @@ static void draw_buf_flush(lv_display_t * disp);
- static void call_flush_cb(lv_display_t * disp, const lv_area_t * area, uint8_t * px_map);
- static void wait_for_flushing(lv_display_t * disp);
- 
-+extern void GPIO_1_SET(int state);
-+
+@@ -68,6 +68,7 @@ static void wait_for_flushing(lv_display_t * disp);
  /**********************
-  *  STATIC VARIABLES
+  *   GLOBAL FUNCTIONS
   **********************/
-@@ -539,6 +541,7 @@ static void refr_invalid_areas(void)
++extern void GPIO_1_SET(int state);
+ 
+ /**
+  * Initialize the screen refresh subsystem
+@@ -582,6 +583,7 @@ static void refr_invalid_areas(void)
  {
      if(disp_refr->inv_p == 0) return;
-     LV_PROFILER_BEGIN;
+     LV_PROFILER_REFR_BEGIN;
 +    GPIO_1_SET(1);
  
      /*Find the last area which will be drawn*/
      int32_t i;
-@@ -568,6 +571,7 @@ static void refr_invalid_areas(void)
-     }
+@@ -654,6 +656,7 @@ static void refr_invalid_areas(void)
  
+     lv_display_send_event(disp_refr, LV_EVENT_RENDER_READY, NULL);
      disp_refr->rendering_in_progress = false;
 +    GPIO_1_SET(0);
-     LV_PROFILER_END;
+     LV_PROFILER_REFR_END;
  }
  

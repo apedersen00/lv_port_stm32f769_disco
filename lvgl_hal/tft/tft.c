@@ -144,10 +144,19 @@ void tft_init(void)
 
 	DMA_Config();
 
+#if LV_COLOR_DEPTH == 16
 	static uint8_t buf1[TFT_HOR_RES * 48 * 2] __attribute__((aligned(32)));
 	static uint8_t buf2[TFT_HOR_RES * 48 * 2] __attribute__((aligned(32)));
+#elif LV_COLOR_DEPTH == 32
+	static uint8_t buf1[TFT_HOR_RES * 48 * 4] __attribute__((aligned(32)));
+	static uint8_t buf2[TFT_HOR_RES * 48 * 4] __attribute__((aligned(32)));
+#endif
 	disp = lv_display_create(800, 480);
+#if LV_COLOR_DEPTH == 16
 	lv_display_set_buffers(disp, buf1, buf2, TFT_HOR_RES * 48 * 2, LV_DISP_RENDER_MODE_PARTIAL);
+#elif LV_COLOR_DEPTH == 32
+    	lv_display_set_buffers(disp, buf1, buf2, TFT_HOR_RES * 48 * 4, LV_DISP_RENDER_MODE_PARTIAL);
+#endif
 	lv_display_set_flush_cb(disp, tft_flush_cb);
 }
 
@@ -534,7 +543,11 @@ static void DMA_TransferComplete(DMA_HandleTypeDef *han)
 		lv_disp_flush_ready(disp);
 #endif
 	} else {
-	  buf_to_flush += (x2_flush - x1_flush + 1) * 2;
+#if LV_COLOR_DEPTH == 16
+	buf_to_flush += (x2_flush - x1_flush + 1) * 2;
+#elif LV_COLOR_DEPTH == 32
+    buf_to_flush += (x2_flush - x1_flush + 1) * 4;
+#endif
 	  /*##-7- Start the DMA transfer using the interrupt mode ####################*/
 	  /* Configure the source, destination and buffer size DMA fields and Start DMA Stream transfer */
 	  /* Enable All the DMA interrupts */

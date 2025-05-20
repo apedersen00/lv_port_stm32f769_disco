@@ -89,6 +89,8 @@ void demo_screen_blit()
     lv_obj_set_pos(my_rect, 0, 0);
     lv_obj_set_style_bg_color(my_rect, (lv_color_t)LV_COLOR_MAKE(0, 0, 255), 0);
 
+    lv_obj_set_style_radius(my_rect, 0, 0);
+
     lv_disp_load_scr(ui_Menu);
 }
 
@@ -100,12 +102,14 @@ void demo_screen_blend()
     lv_obj_set_size(my_rect, 800, 480);
     lv_obj_set_pos(my_rect, 0, 0);
     lv_obj_set_style_bg_color(my_rect, (lv_color_t)LV_COLOR_MAKE(0, 0, 255), 0);
+    lv_obj_set_style_radius(my_rect, 0, 0);
 
     my_other_rect = lv_obj_create(ui_Menu);
     lv_obj_set_size(my_other_rect, 800, 480);
     lv_obj_set_pos(my_other_rect, 0, 0);
     lv_obj_set_style_bg_color(my_other_rect, (lv_color_t)LV_COLOR_MAKE(255, 0, 0), 0);
     lv_obj_set_style_bg_opa(my_other_rect, LV_OPA_50, 0);
+    lv_obj_set_style_radius(my_other_rect, 0, 0);
 
     lv_disp_load_scr(ui_Menu);
 }
@@ -118,6 +122,7 @@ void demo_screen_text()
     lv_obj_set_size(my_rect, 800, 480);
     lv_obj_set_pos(my_rect, 0, 0);
     lv_obj_set_style_bg_color(my_rect, (lv_color_t)LV_COLOR_MAKE(0, 0, 255), 0);
+    lv_obj_set_style_radius(my_rect, 0, 0);
 
     ui_Set_Minutes1 = lv_label_create(ui_Menu);
     lv_obj_set_width(ui_Set_Minutes1, lv_pct(80));   /// 1

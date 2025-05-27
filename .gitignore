@@ -32,10 +32,7 @@ _deps
 *.obj
 *.elf
 
-# Linker output
-*.ilk
-*.map
-*.exp
+build
 
 # Precompiled Headers
 *.gch

@@ -69,7 +69,7 @@
 
 #if LV_USE_STDLIB_MALLOC == LV_STDLIB_BUILTIN
     /** Size of memory available for `lv_malloc()` in bytes (>= 2kB) */
-    #define LV_MEM_SIZE (64 * 1024U)          /**< [bytes] */
+    #define LV_MEM_SIZE (350 * 1024U)          /**< [bytes] */
 
     /** Size of the memory expand for `lv_malloc()` in bytes */
     #define LV_MEM_POOL_EXPAND_SIZE 0
@@ -330,7 +330,7 @@
 #endif
 
 /** Accelerate blends, fills, etc. with STM32 DMA2D */
-#define LV_USE_DRAW_DMA2D 1
+#define LV_USE_DRAW_DMA2D 0
 
 #if LV_USE_DRAW_DMA2D
     #define LV_DRAW_DMA2D_HAL_INCLUDE "stm32f7xx_hal.h"
@@ -918,10 +918,10 @@
 
 
 /** Decode bin images to RAM */
-#define LV_BIN_DECODER_RAM_LOAD 0
+#define LV_BIN_DECODER_RAM_LOAD 1
 
 /** RLE decompress library */
-#define LV_USE_RLE 0
+#define LV_USE_RLE 1
 
 /** QR code library */
 #define LV_USE_QRCODE 0
@@ -962,7 +962,7 @@
 #define LV_USE_THORVG_EXTERNAL 0
 
 /** Use lvgl built-in LZ4 lib */
-#define LV_USE_LZ4_INTERNAL  0
+#define LV_USE_LZ4_INTERNAL  1
 
 /** Use external LZ4 library */
 #define LV_USE_LZ4_EXTERNAL  0

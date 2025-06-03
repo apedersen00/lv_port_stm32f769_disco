@@ -167,3 +167,45 @@ lv_timer_handler: 20.7 ms
 refr_invalid_areas: 20.31 ms
 flush_cb: 0.25 ms
 render_time: 20.06 ms
+
+## 300x300 Bitmap RGB565, Sw, GCC Os
+
+lv_timer_handler: 9.84 ms
+refr_invalid_areas: 9.46 ms
+flush_cb: 0.27 ms
+render_time: 9.19 ms
+
+## 300x300 Bitmap RGB565 RLE, Sw, GCC Os
+
+lv_timer_handler: 23.33 ms
+refr_invalid_areas: 22.94 ms
+flush_cb: 0.28 ms
+render_time: 22.66 ms
+
+## 300x300 Bitmap RGB565 LZ4, Sw, GCC Os
+
+lv_timer_handler: 126.94 ms
+refr_invalid_areas: 126.55 ms
+flush_cb: 0.28 ms
+render_time: 126.27 ms
+
+## 300x300 Bitmap RGB565, Sw, GCC O3
+
+lv_timer_handler: 9.79 ms
+refr_invalid_areas: 9.4 ms
+flush_cb: 0.27 ms
+render_time: 9.13 ms
+
+## 300x300 Bitmap RGB565 RLE, Sw, GCC O3
+
+lv_timer_handler: 21.5 ms
+refr_invalid_areas: 21.11 ms
+flush_cb: 0.27 ms
+render_time: 20.84 ms
+
+## 300x300 Bitmap RGB565 LZ4, Sw, GCC O3
+
+lv_timer_handler: 114.99 ms
+refr_invalid_areas: 114.6 ms
+flush_cb: 0.27 ms
+render_time: 114.33 ms

@@ -7,14 +7,14 @@ refr_invalid_areas: 29.75 ms
 flush_cb: 0.32 ms
 render_time: 29.44 ms
 
-## Screen Blit, SW, GCC O3
+## Screen Fill, SW, GCC O3
 
 lv_timer_handler: 8.17 ms
 refr_invalid_areas: 7.78 ms
 flush_cb: 0.28 ms
 render_time: 7.5 ms
 
-## Screen Blend, SW, GCC O3
+## Screen Fill Blend, SW, GCC O3
 
 lv_timer_handler: 40.07 ms
 refr_invalid_areas: 39.69 ms
@@ -28,6 +28,20 @@ refr_invalid_areas: 77.41 ms
 flush_cb: 0.32 ms
 render_time: 77.09 ms
 
+## Bitmap, SW, GCC O3
+
+lv_timer_handler: 29.55 ms
+refr_invalid_areas: 29.17 ms
+flush_cb: 0.31 ms
+render_time: 28.85 ms
+
+## Bitmap Blend, SW, GCC O3
+
+lv_timer_handler: 64.37 ms
+refr_invalid_areas: 63.98 ms
+flush_cb: 0.3 ms
+render_time: 63.68 ms
+
 ## Widgets Light, DMA2D, GCC O3
 
 lv_timer_handler: 26.09 ms
@@ -35,14 +49,14 @@ refr_invalid_areas: 25.7 ms
 flush_cb: 0.31 ms
 render_time: 25.39 ms
 
-## Screen Blit, DMA2D, GCC O3
+## Screen Fill, DMA2D, GCC O3
 
 lv_timer_handler: 8.23 ms
 refr_invalid_areas: 7.84 ms
 flush_cb: 0.27 ms
 render_time: 7.58 ms
 
-## Screen Blend, DMA2D, GCC O3
+## Screen Fill Blend, DMA2D, GCC O3
 
 lv_timer_handler: 13.46 ms
 refr_invalid_areas: 13.07 ms
@@ -56,6 +70,20 @@ refr_invalid_areas: 76.37 ms
 flush_cb: 0.33 ms
 render_time: 76.04 ms
 
+## Bitmap, DMA2D, GCC O3
+
+lv_timer_handler: 21.24 ms
+refr_invalid_areas: 20.85 ms
+flush_cb: 0.25 ms
+render_time: 20.6 ms
+
+## Bitmap Blend, DMA2D, GCC O3
+
+lv_timer_handler: 20.33 ms
+refr_invalid_areas: 19.95 ms
+flush_cb: 0.25 ms
+render_time: 19.7 ms
+
 ## Widgets Light, SW, GCC Os
 
 lv_timer_handler: 34.7 ms
@@ -63,14 +91,14 @@ refr_invalid_areas: 34.31 ms
 flush_cb: 0.32 ms
 render_time: 33.99 ms
 
-## Screen Blit, SW, GCC Os
+## Screen Fill, SW, GCC Os
 
 lv_timer_handler: 8.25 ms
 refr_invalid_areas: 7.86 ms
 flush_cb: 0.28 ms
 render_time: 7.58 ms
 
-## Screen Blend, SW, GCC Os
+## Screen Fill Blend, SW, GCC Os
 
 lv_timer_handler: 65.5 ms
 refr_invalid_areas: 65.12 ms
@@ -84,6 +112,20 @@ refr_invalid_areas: 89.79 ms
 flush_cb: 0.33 ms
 render_time: 89.47 ms
 
+## Bitmap, SW, GCC Os
+
+lv_timer_handler: 37.69 ms
+refr_invalid_areas: 37.3 ms
+flush_cb: 0.31 ms
+render_time: 36.99 ms
+
+## Bitmap Blend, SW, GCC Os
+
+lv_timer_handler: 76.24 ms
+refr_invalid_areas: 75.85 ms
+flush_cb: 0.31 ms
+render_time: 75.54 ms
+
 ## Widgets Light, DMA2D, GCC Os
 
 lv_timer_handler: 29.95 ms
@@ -91,14 +133,14 @@ refr_invalid_areas: 29.56 ms
 flush_cb: 0.31 ms
 render_time: 29.25 ms
 
-## Screen Blit, DMA2D, GCC Os
+## Screen Fill, DMA2D, GCC Os
 
 lv_timer_handler: 8.28 ms
 refr_invalid_areas: 7.89 ms
 flush_cb: 0.27 ms
 render_time: 7.63 ms
 
-## Screen Blend, DMA2D, GCC Os
+## Screen Fill Blend, DMA2D, GCC Os
 
 lv_timer_handler: 13.67 ms
 refr_invalid_areas: 13.28 ms
@@ -111,3 +153,17 @@ lv_timer_handler: 89.57 ms
 refr_invalid_areas: 89.18 ms
 flush_cb: 0.33 ms
 render_time: 88.86 ms
+
+## Bitmap, DMA2D, GCC Os
+
+lv_timer_handler: 20.3 ms
+refr_invalid_areas: 19.92 ms
+flush_cb: 0.25 ms
+render_time: 19.67 ms
+
+## Bitmap Blend, DMA2D, GCC Os
+
+lv_timer_handler: 20.7 ms
+refr_invalid_areas: 20.31 ms
+flush_cb: 0.25 ms
+render_time: 20.06 ms
